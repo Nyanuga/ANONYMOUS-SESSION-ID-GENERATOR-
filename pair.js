@@ -67,7 +67,7 @@ router.get('/', async (req, res) => {
 ❶ || Creator =ANONYMOUS POWER 
       Designed=KING Orman
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-❷ || WhattsApp Channel = https://whatsapp.com/channel/0029VaxZbeSDTkJwBgUb9u3N
+❷ || WhattsApp Channel = https://whatsapp.com/channel/0029Vb57ZHh7IUYcNttXEB3y
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 ❸ || Owner = https://wa.me/+256784670936
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬
