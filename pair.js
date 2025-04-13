@@ -57,20 +57,23 @@ router.get('/', async (req, res) => {
                let session = await Pair_Code_By_Gifted_Tech.sendMessage(Pair_Code_By_Gifted_Tech.user.id, { text: '' + b64data });
 
                let GIFTED_MD_TEXT = `
-*_Pair Code Connected*
-*_Made With 🚬🗿_*
-______________________________________
-╔════◇
-║ *『 AMAZING YOU'VE CHOSEN ANONYMOUS』*
-║ _You Have Completed the First Step to Deploy a Whatsapp Bot._
-╚════════════════════════╝
-╔═════◇
-║  『••• 𝗩𝗶𝘀𝗶𝘁 𝗙𝗼𝗿 𝗛𝗲𝗹𝗽 •••』
-║ 
-╚════════════════════════╝
-_____________________________________
 
-_Don't Forget To Give Star To My Repo_`
+┏━━━━━━━━━━━━━━
+┃ANONYMOUS-MD SESSION IS 
+┃SUCCESSFULLY
+┃CONNECTED 💯🔥
+┗━━━━━━━━━━━━━━━
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+❶ || Creator =ANONYMOUS POWER 
+      Designed=KING Orman
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+❷ || WhattsApp Channel = https://whatsapp.com/channel/0029VaxZbeSDTkJwBgUb9u3N
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+❸ || Owner = https://wa.me/+256784670936
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+❺ || GIT HUB REPO = https://github.com/Terrizev/ANONYMOUS-MD/forck
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+ᴄʀᴇᴀᴛᴇᴅ ʙʏ ᴍʀ Uthuman Dev😌`
  await Pair_Code_By_Gifted_Tech.sendMessage(Pair_Code_By_Gifted_Tech.user.id,{text:GIFTED_MD_TEXT},{quoted:session})
  
 
