@@ -71,7 +71,7 @@ router.get('/', async (req, res) => {
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 ❸ || Owner = https://wa.me/+256784670936
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-❺ || GIT HUB REPO = https://github.com/Terrizev/ANONYMOUS-MD/forck
+❺ || GIT HUB REPO = https://github.com/Terrizev/ANONYMOUS-MD/fork
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 ᴄʀᴇᴀᴛᴇᴅ ʙʏ ᴍʀ Uthuman Dev😌`
  await Pair_Code_By_Gifted_Tech.sendMessage(Pair_Code_By_Gifted_Tech.user.id,{text:GIFTED_MD_TEXT},{quoted:session})
