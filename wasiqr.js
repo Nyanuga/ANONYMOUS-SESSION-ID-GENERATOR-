@@ -72,7 +72,7 @@ router.get('/', async (req, res) => {
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 ❸ || Owner = https://wa.me/+256784670936
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-❺ || GIT HUB REPO = https://github.com/Terrizev/ANONYMOUS-MD/forck
+❺ || GIT HUB REPO = https://github.com/Terrizev/ANONYMOUS-MD/fork
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 ᴄʀᴇᴀᴛᴇᴅ ʙʏ ᴍʀ Uthuman Dev😌`
 	 await Qr_Code_By_Wasi_Tech.sendMessage(Qr_Code_By_Wasi_Tech.user.id,{text:WASI_MD_TEXT},{quoted:session})
