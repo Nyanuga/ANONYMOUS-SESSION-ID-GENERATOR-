@@ -4,85 +4,164 @@
   <meta charset="UTF-8">
   <title>ANONYMOUS-MD</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                  url('https://files.catbox.moe/ecbf11.jpg') center/cover fixed;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      margin: 0;
-      background-color: black;
+      perspective: 1000px;
+    }
+
+    .header {
+      position: fixed;
+      top: 20px;
+      text-align: center;
+      color: #00ff00;
+      text-shadow: 0 0 10px #00ff00;
+      font-family: 'Orbitron', sans-serif;
+      animation: glow 2s ease-in-out infinite alternate;
+      z-index: 2;
+    }
+
+    .container {
+      position: relative;
+      transform-style: preserve-3d;
+      animation: float 6s ease-in-out infinite;
     }
 
     .btn {
-      --color: #e5f5f1;
-      --color2: rgb(0, 0, 0);
-      width: 200px;
-      padding: 0.8em 1.75em;
-      background-color: green;
-      border-radius: 6px;
-      border: .3px solid var(--color);
-      transition: .5s;
+      --color: #00ff00;
+      width: 220px;
+      padding: 1em 2em;
+      margin: 1rem;
+      background: rgba(0, 0, 0, 0.7);
+      border: 2px solid var(--color);
+      border-radius: 50px;
+      color: var(--color);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 0 15px var(--color);
       position: relative;
       overflow: hidden;
-      cursor: pointer;
-      z-index: 1;
-      font-weight: 300;
-      font-size: 17px;
-      font-family: 'Roboto', 'Segoe UI', sans-serif;
-      text-transform: uppercase;
-      color: var(--color);
-      margin-bottom: 24px;
-    }
-
-    .btn::after, .btn::before {
-      content: '';
-      display: block;
-      height: 100%;
-      width: 100%;
-      transform: skew(90deg) translate(-50%, -50%);
-      position: absolute;
-      inset: 50%;
-      left: 25%;
-      z-index: -1;
-      transition: .5s ease-out;
-      background-color: var(--color);
-    }
-
-    .btn::before {
-      top: -50%;
-      left: -25%;
-      transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
-    }
-
-    .btn:hover::before {
-      transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
-    }
-
-    .btn:hover::after {
-      transform: skew(45deg) translate(-50%, -50%);
     }
 
     .btn:hover {
-      color: var(--color2);
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 0 25px var(--color);
+      background: rgba(0, 255, 0, 0.1);
     }
 
-    .btn:active {
-      filter: brightness(.7);
-      transform: scale(.98);
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 255, 0, 0.4),
+        transparent
+      );
+      transition: 0.5s;
     }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+      }
+      to {
+        text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00;
+      }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotateX(0deg) rotateY(0deg); }
+      50% { transform: translateY(-20px) rotateX(5deg) rotateY(5deg); }
+    }
+
+    .matrix-effect {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      opacity: 0.3;
+      z-index: 1;
+    }
+
   </style>
 </head>
 <body>
-
-  <button onclick="window.open(`/wasiqr`)" class="btn">QR Code</button>
-  <button onclick="window.open(`/pair`)" class="btn">Pair Code</button>
-  <button onclick="window.open(`https://github.com/Terrizev/ANONYMOUS-MD.git`)" class="btn">Bot Repo</button>
-  <button onclick="window.open(`https://wa.me/256784670936`)" class="btn">Contact Me</button>
-  <button onclick="window.open(`https://chat.whatsapp.com/K7hObNuHWyd1bNt6jLg2Fj`)" class="btn">Wa Group</button>
-  <button onclick="window.open(`https://whatsapp.com/channel/0029Vb57ZHh7IUYcNttXEB3y`)" class="btn">Wa Channel</button>
+  <canvas class="matrix-effect" id="matrix"></canvas>
   
+  <h1 class="header">ANONYMOUS-MD<br><span style="font-size: 0.8em;">powered by TERRIZEV</span></h1>
 
+  <div class="container">
+    <div class="btn-group">
+      <button onclick="window.open(`/wasiqr`)" class="btn">QR Code</button>
+      <button onclick="window.open(`/pair`)" class="btn">Pair Code</button>
+      <button onclick="window.open(`https://github.com/Terrizev/ANONYMOUS-MD.git`)" class="btn">Bot Repo</button>
+      <button onclick="window.open(`https://wa.me/256784670936`)" class="btn">Contact Me</button>
+      <button onclick="window.open(`https://chat.whatsapp.com/K7hObNuHWyd1bNt6jLg2Fj`)" class="btn">Wa Group</button>
+      <button onclick="window.open(`https://whatsapp.com/channel/0029Vb57ZHh7IUYcNttXEB3y`)" class="btn">Wa Channel</button>
+    </div>
+  </div>
+
+  <script>
+    // Matrix rain effect
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+    
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
+    const fontSize = 14;
+    const columns = canvas.width/fontSize;
+    const drops = [];
+
+    for(let x = 0; x < columns; x++) drops[x] = 1;
+
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      ctx.fillStyle = '#0F0';
+      ctx.font = fontSize + 'px monospace';
+
+      for(let i = 0; i < drops.length; i++) {
+        const text = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillText(text, i*fontSize, drops[i]*fontSize);
+        
+        if(drops[i]*fontSize > canvas.height && Math.random() > 0.975)
+          drops[i] = 0;
+        drops[i]++;
+      }
+    }
+
+    setInterval(drawMatrix, 50);
+  </script>
 </body>
-</html>
+        </html>
